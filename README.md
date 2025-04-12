@@ -1,4 +1,4 @@
-= Tackler Time Tracking System
+# Tackler Time Tracking System
 
 This is WIP project. 
 
