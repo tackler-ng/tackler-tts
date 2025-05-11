@@ -1,0 +1,29 @@
+#
+# Tackler-TTS 2025
+# SPDX-License-Identifier: Apache-2.0
+#
+[package]
+name = "tackler-tts-git"
+version = "0.0.1"
+description = "Git components (gix) for Tackler Time Tracking System"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+categories.workspace = true
+keywords.workspace = true
+include.workspace = true
+rust-version.workspace = true
+
+[lints]
+workspace = true
+
+[lib]
+name = "tackler_tts_git"
+path = "src/lib.rs"
+
+[dependencies]
+log = { workspace = true }
+gix = { version = "0.72.1", default-features = false, features = ["max-performance-safe", "revision"] }
+
+[dev-dependencies]
+

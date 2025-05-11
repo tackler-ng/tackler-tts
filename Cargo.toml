@@ -1,13 +1,39 @@
-[package]
-name = "tackler-tts"
-description = "Tackler Time Tracking System"
-version = "0.0.1"
+#
+# Tackler-TTS 2025
+# SPDX-License-Identifier: Apache-2.0
+#
+[workspace]
+members = [
+  "tts-core",
+  "tts-cli",
+]
+resolver = "3"
+
+[workspace.package]
 edition = "2024"
 license = "Apache-2.0"
 repository = "https://github.com/tackler-ng/tackler-tts"
+categories = [ "time-tracking" ]
 keywords = [ "time-tracking" ]
 include = [ "src/**/*.rs", "README.md", "build.rs", "LICENSE", "NOTICE" ]
 rust-version = "1.85.0"
 
+[workspace.lints.rust]
+rust_2018_idioms = { level = "warn", priority = -1 }
+rust-2024-compatibility = { level = "warn", priority = -1 }
+unreachable_pub = "warn"
+unused_lifetimes = "warn"
 
-[dependencies]
+[profile.release]
+lto = true
+codegen-units = 1
+
+[profile.bench]
+lto = true
+codegen-units = 1
+
+[workspace.dependencies]
+jiff = { version = "0.2.13" }
+log = "0.4.27"
+mimalloc = { version = "0.1.46" }
+

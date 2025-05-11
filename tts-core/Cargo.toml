@@ -1,0 +1,33 @@
+#
+# Tackler-TTS 2025
+# SPDX-License-Identifier: Apache-2.0
+#
+[package]
+name = "tackler-tts-core"
+version = "0.0.1"
+description = "Core components for Tackler Time Tracking System"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+categories.workspace = true
+keywords.workspace = true
+include.workspace = true
+rust-version.workspace = true
+
+[lints]
+workspace = true
+
+[lib]
+name = "tackler_tts_core"
+path = "src/lib.rs"
+
+[dependencies]
+jiff = { workspace = true }
+log = { workspace = true }
+
+toml = "0.8.22"
+uuid = "1.16.0"
+indoc = "2.0.6"
+
+[dev-dependencies]
+
